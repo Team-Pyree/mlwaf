@@ -1,0 +1,7 @@
+2023/10/27 01:27:29 [notice] 7#7: *1 [lua] content_by_lua(default.conf:34):5: ML endpoint called, client: 172.18.0.3, server: localhost, request: "POST / HTTP/1.1", host: "ml"
+2023/10/27 01:28:29 [info] 7#7: *1 client 172.18.0.3 closed keepalive connection
+2023/10/27 09:57:15 [notice] 7#7: *1 [lua] content_by_lua(default.conf:34):5: ML endpoint called, client: 172.27.0.3, server: localhost, request: "POST / HTTP/1.1", host: "ml"
+2023/10/27 09:58:15 [info] 7#7: *1 client 172.27.0.3 closed keepalive connection
+2023/10/27 09:58:25 [notice] 7#7: *2 [lua] content_by_lua(default.conf:34):5: ML endpoint called, client: 172.27.0.3, server: localhost, request: "POST / HTTP/1.1", host: "ml"
+2023/10/27 09:59:13 [notice] 7#7: *2 [lua] content_by_lua(default.conf:34):5: ML endpoint called, client: 172.27.0.3, server: localhost, request: "POST / HTTP/1.1", host: "ml"
+2023/10/27 09:59:24 [info] 7#7: *2 client 172.27.0.3 closed keepalive connection

@@ -1,0 +1,6 @@
+2023/11/21 10:47:39 [notice] 7#7: *1 [lua] insert.lua:27: connect(): connected to mysql., client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):70: ML API call error:Bad Request, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):74: ML API call success. continue to upstream, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):81: Decoded Response Body:{"ErrorCode":"NO_SUCH_ENDPOINT","Message":"Endpoint Custom-sklearn-model-2023-10-16-19-03-04 of account 918934048065 not found."}, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):98: This is a normal request, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/21 10:47:39 [info] 7#7: *1 client 192.168.65.1 closed keepalive connection

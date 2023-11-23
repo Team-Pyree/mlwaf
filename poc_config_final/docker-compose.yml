@@ -1,0 +1,60 @@
+version: '3'
+services:
+  waf:
+    image: openresty/openresty:1.21.4.1-0-jammy
+    volumes:
+      - ${PWD}/waf/conf.d:/etc/nginx/conf.d
+      - ${PWD}/waf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ${PWD}/waf/logs:/var/log/nginx/
+      - ${PWD}/lualib/http.lua:/usr/local/openresty/lualib/resty/http.lua:ro
+      - ${PWD}/lualib/http_connect.lua:/usr/local/openresty/lualib/resty/http_connect.lua:ro
+      - ${PWD}/lualib/http_headers.lua:/usr/local/openresty/lualib/resty/http_headers.lua:ro
+      - ${PWD}/lualib/mysql.lua:/usr/local/openresty/lualib/resty/mysql.lua:ro
+      - ${PWD}/lualib/rsa.lua:/usr/local/openresty/lualib/resty/rsa.lua:ro
+      - ${PWD}/lualib/insert.lua:/usr/local/openresty/lualib/resty/insert.lua:ro
+      - ${PWD}/lualib/aws_auth.lua:/usr/local/openresty/lualib/resty/aws_auth.lua:ro
+      - ${PWD}/lualib/hmac.lua:/usr/local/openresty/lualib/resty/hmac.lua:ro
+      - ${PWD}/lualib/sha.lua:/usr/local/openresty/lualib/resty/sha.lua:ro
+      - ${PWD}/lualib/sha256.lua:/usr/local/openresty/lualib/resty/sha256.lua:ro
+      - ${PWD}/lualib/string.lua:/usr/local/openresty/lualib/resty/string.lua:ro
+    ports:
+      - "9090:80"
+    environment:
+      - HOST_ML=ml
+      - HOST_WEB=web
+
+  ml:
+    image: openresty/openresty:1.21.4.1-0-jammy
+    volumes:
+      - ${PWD}/ml/conf.d:/etc/nginx/conf.d
+      - ${PWD}/ml/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ${PWD}/ml/logs:/var/log/nginx/
+      - ${PWD}/lualib/http.lua:/usr/local/openresty/lualib/resty/http.lua:ro
+      - ${PWD}/lualib/http_connect.lua:/usr/local/openresty/lualib/resty/http_connect.lua:ro
+      - ${PWD}/lualib/http_headers.lua:/usr/local/openresty/lualib/resty/http_headers.lua:ro
+    ports:
+      - 9091:80
+
+  web:
+    container_name: django
+    build: 
+      context: .
+      dockerfile: dockerfile
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:80"
+    volumes: 
+      - ${PWD}/djangoweb/env:/usr/src/app/djangoweb/env
+      - ${PWD}/djangoweb/puddle:/usr/src/app/djangoweb/puddle
+      - ${PWD}/djangoweb/.vscode:/usr/src/app/djangoweb/.vscode
+    ports:
+      - "9092:80"
+
+  mysql:
+    image: mysql:latest
+    hostname: localhost
+    volumes:
+      - ${PWD}/data:/var/lib/mysql
+      - ${PWD}/security_logs.sql:/docker-entrypoint-initdb.d/security_logs.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1111
+    ports:
+      - 3305:3306
