@@ -35,6 +35,22 @@ services:
     ports:
       - 9091:80
 
+  dashboard:
+    build: 
+      context: .
+      dockerfile: Dockerfile  # 별도의 Dockerfile을 지정
+    ports:
+      - "9093:80"
+    volumes:
+      - ${PWD}/dashboard/env:/usr/src/app/dashboard/env
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=1111
+      - DB_DATABASE=logs
+    depends_on:
+      - mysql
+
   web:
     container_name: django
     build: 
