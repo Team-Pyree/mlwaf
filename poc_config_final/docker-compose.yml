@@ -44,12 +44,12 @@ services:
     volumes:
       - ${PWD}/dashboard/env:/usr/src/app/dashboard/env
     environment:
-      - DB_HOST=mysql
+      - DB_HOST=localhost
       - DB_USER=root
       - DB_PASSWORD=1111
       - DB_DATABASE=logs
     depends_on:
-      - mysql
+      - mysql 
 
   web:
     container_name: django
