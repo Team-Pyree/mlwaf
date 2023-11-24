@@ -140,31 +140,77 @@
 #     print(f"Error connecting to MySQL: {e}")
 #     db = None  # 에러 발생 시 db 변수를 None으로 설정
 
-# 6차 시도 (멘토님 코드)
+# # 6차 시도 (멘토님 코드)
+# import pymysql
+# import pprint
+# import os
+# import time
+
+# try:
+#     db_host = os.environ.get('DB_HOST', 'mysql')
+#     db_user = os.environ.get('DB_USER', 'root')
+#     db_password = os.environ.get('DB_PASSWORD', '1111')
+#     db_database = os.environ.get('DB_DATABASE', 'logs')
+    
+#     time.sleep(10)  # 여기서 10초 대기합니다.
+    
+#     db = pymysql.connect(
+#         host=db_host,
+#         user=db_user,
+#         password=db_password,
+#         database=db_database
+#     )
+    
+#     if db:
+#         print("Successfully connected to MySQL!")
+#         # 필요한 작업 수행
+    
+# except pymysql.MySQLError as e:
+#     print(f"Error connecting to MySQL: {e}")
+#     db = None  # 에러 발생 시 db 변수를 None으로 설정
+
+
+# 7차 시도 (index.html 페이지에 뿌려주는 코드)
+from flask import Flask, render_template
 import pymysql
-import pprint
 import os
 import time
 
-try:
-    db_host = os.environ.get('DB_HOST', 'mysql')
-    db_user = os.environ.get('DB_USER', 'root')
-    db_password = os.environ.get('DB_PASSWORD', '1111')
-    db_database = os.environ.get('DB_DATABASE', 'logs')
-    
-    time.sleep(10)  # 여기서 10초 대기합니다.
-    
-    db = pymysql.connect(
+app = Flask(__name__)
+
+# DB 연결 정보
+db_host = os.environ.get('DB_HOST', 'mysql')
+db_user = os.environ.get('DB_USER', 'root')
+db_password = os.environ.get('DB_PASSWORD', '1111')
+db_database = os.environ.get('DB_DATABASE', 'logs')
+
+time.sleep(10)  # 여기서 10초 대기합니다.
+
+# MySQL 연결 함수
+def connect_to_db():
+    return pymysql.connect(
         host=db_host,
         user=db_user,
         password=db_password,
         database=db_database
     )
+
+# 라우트 설정
+@app.route('/')
+def index():
+    try:
+        # DB 연결
+        db = connect_to_db()
+        if db:
+            cursor = db.cursor()
+            cursor.execute("SELECT * FROM security_logs")  # 쿼리를 여기에 적용해야 합니다.
+            data = cursor.fetchall()  # 쿼리 결과 가져오기
+
+            return render_template('index.html', data=data)  # 가져온 데이터를 HTML에 전달하여 렌더링
+    except pymysql.MySQLError as e:
+        print(f"Error connecting to MySQL: {e}")
+        return "Error connecting to MySQL"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9093)
     
-    if db:
-        print("Successfully connected to MySQL!")
-        # 필요한 작업 수행
-    
-except pymysql.MySQLError as e:
-    print(f"Error connecting to MySQL: {e}")
-    db = None  # 에러 발생 시 db 변수를 None으로 설정
