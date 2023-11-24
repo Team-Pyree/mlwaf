@@ -81,32 +81,90 @@
 # pprint.pprint(db)
 
 
-# 4차 시도
+# # 4차 시도
+# import pymysql
+# import pprint
+# import os
+
+# try:
+#     db_host = os.environ.get('DB_HOST', 'mysql')
+#     db_user = os.environ.get('DB_USER', 'root')
+#     db_password = os.environ.get('DB_PASSWORD', '1111')
+#     db_database = os.environ.get('DB_DATABASE', 'logs')
+
+#     db = pymysql.connect(
+#         host=db_host,
+#         user=db_user,
+#         password=db_password,
+#         database=db_database,
+#         charset='utf8'
+#     )
+
+#     cursor = db.cursor()
+#     cursor.execute("SELECT * FROM security_logs")
+#     data = cursor.fetchall()
+#     print(data)
+
+# except pymysql.MySQLError as e:
+#     print(f"Error connecting to MySQL: {e}")
+#     db = None  # 에러 발생 시 db 변수를 None으로 설정
+
+# pprint.pprint(db)
+
+
+
+# # 5차 시도
+# import pymysql
+# import os
+
+# try:
+#     db_host = os.environ.get('DB_HOST', 'mysql')
+#     db_user = os.environ.get('DB_USER', 'root')
+#     db_password = os.environ.get('DB_PASSWORD', '1111')
+#     db_database = os.environ.get('DB_DATABASE', 'logs')
+
+#     db = pymysql.connect(
+#         host=db_host,
+#         user=db_user,
+#         password=db_password,
+#         database=db_database,
+#         charset='utf8'
+#     )
+
+#     cursor = db.cursor()
+#     cursor.execute("SELECT * FROM security_logs")
+#     data = cursor.fetchall()
+#     print(data)
+
+# except pymysql.MySQLError as e:
+#     print(f"Error connecting to MySQL: {e}")
+#     db = None  # 에러 발생 시 db 변수를 None으로 설정
+
+# 6차 시도 (멘토님 코드)
 import pymysql
 import pprint
 import os
+import time
 
 try:
     db_host = os.environ.get('DB_HOST', 'mysql')
     db_user = os.environ.get('DB_USER', 'root')
     db_password = os.environ.get('DB_PASSWORD', '1111')
     db_database = os.environ.get('DB_DATABASE', 'logs')
-
+    
+    time.sleep(10)  # 여기서 10초 대기합니다.
+    
     db = pymysql.connect(
         host=db_host,
         user=db_user,
         password=db_password,
-        database=db_database,
-        charset='utf8'
+        database=db_database
     )
-
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM security_logs")
-    data = cursor.fetchall()
-    print(data)
-
+    
+    if db:
+        print("Successfully connected to MySQL!")
+        # 필요한 작업 수행
+    
 except pymysql.MySQLError as e:
     print(f"Error connecting to MySQL: {e}")
     db = None  # 에러 발생 시 db 변수를 None으로 설정
-
-pprint.pprint(db)
