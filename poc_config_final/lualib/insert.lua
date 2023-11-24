@@ -10,8 +10,9 @@ function data.connect()
     end
 
     local ok, err, errcode, sqlstate = db:connect{
-        host = "localhost",
-        port = 3306,
+        -- host = "localhost",
+        host = "mysql",
+        -- port = 3306,
         database = "logs",
         user = "root",
         password = "1111",
