@@ -53,25 +53,23 @@ services:
   #   depends_on:
   #     - mysql 
 
-#멘토님 수정 코드
   dashboard:
     build:
       context: .
-      dockerfile: ${PWD}/dashboard/Dockerfile  # 별도의 Dockerfile을 지정
+      dockerfile: ./dashboard/Dockerfile
     ports:
-      - "9093:80"
+      - "9093:9093"
     volumes:
-      - ${PWD}/dashboard/env:/usr/src/app/dashboard/env
-      - ${PWD}/dashboard/templates:/usr/src/app/dashboard/templates
-      - ${PWD}/dashboard/app.py:/usr/src/app/dashboard/app.py
+      - ./dashboard/env:/usr/src/app/dashboard/env
+      - ./dashboard/templates:/usr/src/app/dashboard/templates
+      - ./dashboard/app.py:/usr/src/app/dashboard/app.py
     environment:
       - DB_HOST=mysql
       - DB_USER=root
       - DB_PASSWORD=1111
       - DB_DATABASE=logs
     depends_on:
-      mysql:
-        condition: service_healthy
+      - mysql
 
   web:
     container_name: django
