@@ -77,7 +77,7 @@ services:
     container_name: django
     build: 
       context: .
-      dockerfile: dockerfile
+      dockerfile: ${PWD}/djangoweb/Dockerfile
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:80"
     volumes: 
       - ${PWD}/djangoweb/env:/usr/src/app/djangoweb/env

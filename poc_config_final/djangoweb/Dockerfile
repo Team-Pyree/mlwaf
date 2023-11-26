@@ -1,9 +1,3 @@
-FROM openresty/openresty:1.21.4.1-0-jammy
-COPY lualib/insert.lua /usr/local/openresty/lualib/resty/insert.lua
-
-FROM mysql:latest
-COPY security_logs.sql /docker-entrypoint-initdb.d/security_logs.sql
-
 FROM python:3.11.3
 
 WORKDIR /usr/src/app/djangoweb
