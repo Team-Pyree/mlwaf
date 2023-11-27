@@ -9,7 +9,7 @@ def connect_to_mysql():
             host='mysql',
             port=3306,
             user='root',
-            password='J3r0me@78K',
+            password='!pyree2023',
             database='logs',
             charset='utf8'
         )
