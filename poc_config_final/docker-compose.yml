@@ -60,9 +60,10 @@ services:
     ports:
       - "9093:9093"
     volumes:
-      - ./dashboard/env:/usr/src/app/dashboard/env
-      - ./dashboard/templates:/usr/src/app/dashboard/templates
-      - ./dashboard/app.py:/usr/src/app/dashboard/app.py
+      - ${PWD}/dashboard/env:/usr/src/app/dashboard/env
+      - ${PWD}/dashboard/templates:/usr/src/app/dashboard/templates
+      - ${PWD}/dashboard/app.py:/usr/src/app/dashboard/app.py
+      - ${PWD}/dashboard/static:/usr/src/app/dashboard/static
     environment:
       - DB_HOST=mysql
       - DB_USER=root

@@ -188,6 +188,8 @@ except pymysql.MySQLError as e:
 ###########################################################################################
 
 # 7차 시도 (index.html 페이지에 뿌려주는 코드)
+# app.py 파일
+
 from flask import Flask, render_template
 import pymysql
 
@@ -214,7 +216,7 @@ def index():
 
     if db:
         try:
-            cursor = db.cursor()
+            cursor = db.cursor(pymysql.cursors.DictCursor)  # 딕셔너리 커서로 변경하여 컬럼명 기반으로 데이터에 접근
             cursor.execute("SELECT * FROM security_logs")
             data = cursor.fetchall()
             db.close()
@@ -228,5 +230,6 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9093, debug=True)
+
 
 

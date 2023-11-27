@@ -4,3 +4,15 @@
 2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):81: Decoded Response Body:{"ErrorCode":"NO_SUCH_ENDPOINT","Message":"Endpoint Custom-sklearn-model-2023-10-16-19-03-04 of account 918934048065 not found."}, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
 2023/11/21 10:47:39 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):98: This is a normal request, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.1:9090"
 2023/11/21 10:47:39 [info] 7#7: *1 client 192.168.65.1 closed keepalive connection
+2023/11/26 15:01:00 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):23: Request Body:["\/2faf2430c9a04a39","curl\/8.1.2","null","null"], client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/26 15:01:00 [notice] 7#7: *1 [lua] insert.lua:28: connect(): connected to mysql., client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/26 15:01:14 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):75: ML API call success. continue to upstream, client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/26 15:01:14 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):82: Decoded Response Body:["urlregex","valid","valid","valid"], client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/26 15:01:14 [warn] 7#7: *1 [lua] access_by_lua(default.conf:151):110: This is an attack request, client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/26 15:01:14 [info] 7#7: *1 client 192.168.65.1 closed keepalive connection
+2023/11/27 04:34:59 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):23: Request Body:["\/2faf2430c9a04a39","curl\/8.1.2","null","null"], client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/27 04:35:00 [notice] 7#7: *1 [lua] insert.lua:28: connect(): connected to mysql., client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/27 04:35:01 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):75: ML API call success. continue to upstream, client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/27 04:35:01 [notice] 7#7: *1 [lua] access_by_lua(default.conf:151):82: Decoded Response Body:["urlregex","valid","valid","valid"], client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/27 04:35:01 [warn] 7#7: *1 [lua] access_by_lua(default.conf:151):110: This is an attack request, client: 192.168.65.1, server: localhost, request: "GET /2faf2430c9a04a39 HTTP/1.1", host: "127.0.0.1:9090"
+2023/11/27 04:35:01 [info] 7#7: *1 client 192.168.65.1 closed keepalive connection

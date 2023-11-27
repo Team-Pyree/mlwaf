@@ -1,63 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Dashboard | Pyree</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ML-WAF | Pyree</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-        crossorigin="anonymous" />
-</head>
+    <body>
+        <!-- 네비게이션 -->
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <img
+                    src="{{ url_for('static', filename='logo.png') }}"
+                    alt="로고 이미지"
+                    style="width: 120px; height: auto" />
+            </div>
+        </nav>
 
-<body>
+        <!-- 공격 유형 테이블 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">IP 주소</th>
+                    <th scope="col">Timestamp</th>
+                    <th scope="col">Request_Method</th>
+                    <th scope="col">Server_Protocol</th>
+                    <th scope="col">Referer</th>
+                    <th scope="col">request_uri</th>
+                    <th scope="col">User Agent</th>
+                    <th scope="col">Body</th>
+                    <th scope="col">Cookie</th>
+                    <th scope="col">ML_Prediction</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for row in data %}
+                <tr>
+                    <td>{{ row['remote_addr'] }}</td>
+                    <td>{{ row['time_local'] }}</td>
+                    <td>{{ row['request_method'] }}</td>
+                    <td>{{ row['server_protocol'] }}</td>
+                    <td>{{ row['http_referer'] }}</td>
+                    <td>{{ row['request_uri'] }}</td>
+                    <td>{{ row['http_user_agent'] }}</td>
+                    <td>{{ row['body'] }}</td>
+                    <td>{{ row['http_cookie'] }}</td>
+                    <td>{{ row['ml_prediction'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-    <!-- 네비게이션 -->
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pyree</a>
+
+        <div id="chartContainer">
+            <!-- 여기에 차트를 넣을 부분 -->
+            <canvas id="myChart" width="150" height="150"></canvas>
         </div>
-    </nav>
 
-    <!-- 공격 유형 테이블 -->
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">IP 주소</th>
-                <th scope="col">Timestamp</th>
-                <th scope="col">Request_Method</th>
-                <th scope="col">Server_Protocol</th>
-                <th scope="col">Referer</th>
-                <th scope="col">request_uri</th>
-                <th scope="col">User Agent</th>
-                <th scope="col">Body</th>
-                <th scope="col">Cookie</th>
-                <th scope="col">ML_Prediction</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            {% for row in data %}
-            <tr>
-                <td>{{ row[0] }}</td>
-                <td>{{ row[1] }}</td>
-                <td>{{ row[2] }}</td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
-                <td>{{ row[5] }}</td>
-                <td>{{ row[6] }}</td>
-                <td>{{ row[7] }}</td>
-                <td>{{ row[8] }}</td>
-                <td>{{ row[9] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <button id="showChartsBtn" class="btn btn-primary" onclick="displayCharts()">원형차트</button>
 
+        <script>
+            function displayCharts() {
+                // 차트를 표시할 캔버스 요소 가져오기
+                var ctx = document.getElementById('myChart').getContext('2d');
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous">
-    </script>
-</body>
+                // 차트 데이터 생성 (임의의 데이터 예시)
+                var data = {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+                    datasets: [
+                        {
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                            ],
+                            borderWidth: 1,
+                        },
+                    ],
+                };
 
+                // 원형 차트 생성
+                var myPieChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: data,
+                });
+
+                // 막대 차트 생성
+                var myBarChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                });
+            }
+        </script>
+        <style>
+            #showChartsBtn {
+                display: block;
+                margin: auto;
+                margin-top: 20px;
+            }
+        </style>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </body>
 </html>
