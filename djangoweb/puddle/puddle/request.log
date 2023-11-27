@@ -1,0 +1,22 @@
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'LUJJahLqaAREPk7CzFpVadnhCtBnNO3T', 'sessionid': '9hjjm9t5609570n8hyb1kjcwjy2xu7yi'}
+Body: 
+Bad Request: /
+Method: GET, Path: /favicon.ico
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'LUJJahLqaAREPk7CzFpVadnhCtBnNO3T', 'sessionid': '9hjjm9t5609570n8hyb1kjcwjy2xu7yi'}
+Body: 
+Bad Request: /favicon.ico
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'LUJJahLqaAREPk7CzFpVadnhCtBnNO3T', 'sessionid': '9hjjm9t5609570n8hyb1kjcwjy2xu7yi'}
+Body: 
+Method: GET, Path: /media/item_images/KakaoTalk_Photo_2023-11-10-13-31-27.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'LUJJahLqaAREPk7CzFpVadnhCtBnNO3T'}
+Body: 
+Method: GET, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'LUJJahLqaAREPk7CzFpVadnhCtBnNO3T'}
+Body: 

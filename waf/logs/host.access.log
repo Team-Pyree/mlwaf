@@ -1,3 +1,6 @@
 192.168.65.1 - - [21/Nov/2023:10:47:39 +0000] "GET / HTTP/1.1" 400 31 "-" "Wget/1.21.4" "-"
 192.168.65.1 - - [26/Nov/2023:15:01:14 +0000] "GET /2faf2430c9a04a39 HTTP/1.1" 300 0 "-" "curl/8.1.2" "-"
 192.168.65.1 - - [27/Nov/2023:04:35:01 +0000] "GET /2faf2430c9a04a39 HTTP/1.1" 300 0 "-" "curl/8.1.2" "-"
+192.168.65.1 - - [27/Nov/2023:06:18:00 +0000] "GET / HTTP/1.1" 424 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" "-"
+192.168.65.1 - - [27/Nov/2023:06:18:01 +0000] "GET / HTTP/1.1" 400 63107 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" "-"
+192.168.65.1 - - [27/Nov/2023:06:18:02 +0000] "GET /favicon.ico HTTP/1.1" 400 62813 "http://localhost:9090/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" "-"

@@ -19,4 +19,4 @@ class RequestLoggingMiddleware:
         logger.info(f'Method: {request.method}, Path: {request.path}')
         logger.info(f'User-Agent: {request.META.get("HTTP_USER_AGENT", "")}')
         logger.info(f'Cookies: {request.COOKIES}')
-        logger.info(f'Body: {request.body.decode("utf-8")}')
+        # logger.info(f'Body: {request.body.decode("utf-8")}')
