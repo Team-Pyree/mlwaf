@@ -4,23 +4,16 @@ services:
     build: 
       context: .
       dockerfile: ./waf/dockerfile
+    volumes:
+      - ./waf/conf.d/:/etc/nginx/conf.d/
+      - ./waf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./waf/logs/:/var/log/nginx/
     ports:
       - "9090:80"
     environment:
-      - HOST_ML=ml
       - HOST_WEB=web
 
-  #ml:
-  #  image: openresty/openresty:1.21.4.1-0-jammy
-  #  volumes:
-  #    - ./ml/conf.d:/etc/nginx/conf.d
-  #    - ./ml/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
-  #    - ./ml/logs:/var/log/nginx/
-  #    - ./lualib/http.lua:/usr/local/openresty/lualib/resty/http.lua:ro
-  #    - ./lualib/http_connect.lua:/usr/local/openresty/lualib/resty/http_connect.lua:ro
-  #    - ./lualib/http_headers.lua:/usr/local/openresty/lualib/resty/http_headers.lua:ro
-  #  ports:
-  #    - 9091:80
+
 
   dashboard:
     build:
@@ -52,6 +45,8 @@ services:
       - ./djangoweb/.vscode:/usr/src/app/djangoweb/.vscode
     ports:
       - "9092:80"
+    environment:
+      - HOST_WEB=web
 
   mysql:
     build: 
