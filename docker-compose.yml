@@ -20,20 +20,7 @@ services:
     ports:
       - "9090:80"
     environment:
-      - HOST_ML=ml
       - HOST_WEB=web
-
-  ml:
-    image: openresty/openresty:1.21.4.1-0-jammy
-    volumes:
-      - ${PWD}/ml/conf.d:/etc/nginx/conf.d
-      - ${PWD}/ml/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
-      - ${PWD}/ml/logs:/var/log/nginx/
-      - ${PWD}/lualib/http.lua:/usr/local/openresty/lualib/resty/http.lua:ro
-      - ${PWD}/lualib/http_connect.lua:/usr/local/openresty/lualib/resty/http_connect.lua:ro
-      - ${PWD}/lualib/http_headers.lua:/usr/local/openresty/lualib/resty/http_headers.lua:ro
-    ports:
-      - 9091:80
 
   # dashboard:
   #   build: 
