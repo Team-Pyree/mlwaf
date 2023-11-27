@@ -22,23 +22,6 @@ services:
     environment:
       - HOST_WEB=web
 
-  # dashboard:
-  #   build: 
-  #     context: .
-  #     dockerfile: ${PWD}/dashboard/Dockerfile  # 별도의 Dockerfile을 지정
-  #   ports:
-  #     - "9093:80"
-  #   volumes:
-  #     - ${PWD}/dashboard/env:/usr/src/app/dashboard/env
-  #     - ${PWD}/dashboard/templates:/usr/src/app/dashboard/templates
-  #     - ${PWD}/dashboard/app.py:/usr/src/app/dashboard/app.py
-  #   environment:
-  #     - DB_HOST=mysql
-  #     - DB_USER=root
-  #     - DB_PASSWORD=1111
-  #     - DB_DATABASE=logs
-  #   depends_on:
-  #     - mysql 
 
   dashboard:
     build:
@@ -72,7 +55,6 @@ services:
     ports:
       - "9092:80"
 
-# 멘토님 수정 코드
   mysql:
     image: mysql:latest
     # hostname: mysql
@@ -81,8 +63,6 @@ services:
       - ${PWD}/security_logs.sql:/docker-entrypoint-initdb.d/security_logs.sql
     environment:
       - MYSQL_ROOT_PASSWORD=1111
-    ports:
-      - 3305:3306
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
