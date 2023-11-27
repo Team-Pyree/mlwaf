@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.2.0, for Linux (x86_64)
 --
-CREATE DATABASE logs;
+CREATE DATABASE IF NOT EXISTS logs;
 USE logs;
 -- Host: localhost    Database: logs
 -- ------------------------------------------------------

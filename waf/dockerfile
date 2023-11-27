@@ -1,0 +1,13 @@
+FROM openresty/openresty:1.21.4.1-0-jammy
+
+WORKDIR /usr/local/openresty/lualib/resty 
+COPY ./lualib .
+
+WORKDIR /var/log/nginx/
+COPY ./waf/logs .
+
+WORKDIR /etc/nginx
+COPY ./waf/nginx.conf .
+
+WORKDIR /usr/local/openresty/nginx/conf
+COPY ./waf/conf.d .
