@@ -15,7 +15,7 @@ function data.connect()
         -- port = 3306,
         database = "logs",
         user = "root",
-        password = "1111",
+        password = "!pyree2023",
         charset = "utf8",
         max_packet_size = 1024 * 1024,
     }
