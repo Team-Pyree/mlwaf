@@ -62,7 +62,7 @@ services:
       - ${PWD}/data:/var/lib/mysql
       - ${PWD}/security_logs.sql:/docker-entrypoint-initdb.d/security_logs.sql
     environment:
-      - MYSQL_ROOT_PASSWORD=1111
+      - MYSQL_ROOT_PASSWORD=J3r0me@78K
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
