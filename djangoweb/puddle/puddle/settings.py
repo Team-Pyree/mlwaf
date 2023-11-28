@@ -27,15 +27,30 @@ SECRET_KEY = 'django-insecure-*r1k)tv-#zi_2au-@*dhz!1z*k4*99)k418ioe==(rkgy++5y+
 DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HOST_WEB', 'localhost'),'localhost', 'web','127.0.0.1']
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
+# # CSRF 보호 활성화
+# CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_HTTPONLY = True
+# CSRF_USE_SESSIONS = True
 
-# Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:9090',  # 오류 메시지에서 지정된 URL 추가
+    # 기타 신뢰할 수 있는 출처를 추가할 수 있습니다.
+]
+
+# 환경변수 HOST_WEB에서 URL 스킴을 포함하여 가져오기
+# HOST_WEB_URL = os.environ.get('HOST_WEB')
+# if HOST_WEB_URL and not HOST_WEB_URL.startswith(('http://', 'https://')):
+#     HOST_WEB_URL = 'http://' + HOST_WEB_URL  # 예시: 'http://'를 기본 스킴으로 사용
+
+# CSRF_TRUSTED_ORIGINS = [HOST_WEB_URL] if HOST_WEB_URL else []
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,7 +74,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
+
+# URL 설정
 
 ROOT_URLCONF = 'puddle.urls'
 
@@ -147,9 +165,9 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',           # 로그도 레벨이 있음
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': './puddle/request.log',  # Replace with the actual path
+            'filename': './puddle/request.log',
         },
     },
     'loggers': {
