@@ -592,3 +592,21 @@ Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken
 Method: GET, Path: /
 User-Agent: Wget/1.21.4
 Cookies: {}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'cHAyPC5zJz4SzY3IcNRHuwr7cIZKAtqU'}
+Method: GET, Path: /media/item_images/내_버버리.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'cHAyPC5zJz4SzY3IcNRHuwr7cIZKAtqU'}
+Method: GET, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'cHAyPC5zJz4SzY3IcNRHuwr7cIZKAtqU'}
+Method: POST, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'cHAyPC5zJz4SzY3IcNRHuwr7cIZKAtqU'}
+Method: GET, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'k4WsEiH3iGf9FkByfiJUFKTgffQWv73s'}
+Method: POST, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'sessionid': 'nx796aurbsso9ctlmjdxu24c35ncwfwk', 'csrftoken': 'k4WsEiH3iGf9FkByfiJUFKTgffQWv73s'}
