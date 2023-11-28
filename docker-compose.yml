@@ -19,7 +19,10 @@ services:
             - AWS_SERVICE sagemaker
             - REQUEST_METHOD POST
             - REQUEST_PATH /endpoints/pyree-serverless/invocations    
-
+        depends_on:
+          mysql:
+            condition: service_healthy
+            
     dashboard:
         build:
             context: .
