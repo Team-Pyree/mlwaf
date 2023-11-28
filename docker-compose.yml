@@ -29,7 +29,9 @@ services:
             - DB_PASSWORD=!pyree2023
             - DB_DATABASE=logs
         depends_on:
-            - mysql
+          mysql:
+            condition: service_healthy
+
 
     web:
         container_name: django
