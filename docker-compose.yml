@@ -12,6 +12,13 @@ services:
             - '9090:80'
         environment:
             - HOST_WEB=web
+            - AWS_HOST runtime.sagemaker.ap-northeast-2.amazonaws.com
+            - AWS_KEY AKIA5L5F4ZVAQ2UDAX55
+            - AWS_SECRET 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
+            - AWS_REGION ap-northeast-2
+            - AWS_SERVICE sagemaker
+            - REQUEST_METHOD POST
+            - REQUEST_PATH /endpoints/pyree-serverless/invocations    
 
     dashboard:
         build:
