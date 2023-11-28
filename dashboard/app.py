@@ -34,7 +34,7 @@ def index():
             db.close()
             return f"MySQL 쿼리 오류: {e}"
     else:
-        return "MySQL 연결 실패"
+        return "MySQL 연결 중"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9093, debug=True)

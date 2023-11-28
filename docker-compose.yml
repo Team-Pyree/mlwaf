@@ -1,58 +1,56 @@
 version: '3'
 services:
-  waf:
-    build: 
-      context: .
-      dockerfile: ./waf/dockerfile
-    volumes:
-      - ./waf/conf.d/:/etc/nginx/conf.d/
-      - ./waf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
-      - ./waf/logs/:/var/log/nginx/
-    ports:
-      - "9090:80"
-    environment:
-      - HOST_WEB=web
+    waf:
+        build:
+            context: .
+            dockerfile: ./waf/dockerfile
+        volumes:
+            - ./waf/conf.d/:/etc/nginx/conf.d/
+            - ./waf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+            - ./waf/logs/:/var/log/nginx/
+        ports:
+            - '9090:80'
+        environment:
+            - HOST_WEB=web
 
+    dashboard:
+        build:
+            context: .
+            dockerfile: ./dashboard/Dockerfile
+        ports:
+            - '9093:9093'
+        volumes:
+            - ./dashboard/env:/usr/src/app/dashboard/env
+            - ./dashboard/templates:/usr/src/app/dashboard/templates
+            - ./dashboard/app.py:/usr/src/app/dashboard/app.py
+        environment:
+            - DB_HOST=mysql
+            - DB_USER=root
+            - DB_PASSWORD=!pyree2023
+            - DB_DATABASE=logs
+        depends_on:
+            - mysql
 
+    web:
+        container_name: django
+        build:
+            context: .
+            dockerfile: ./djangoweb/Dockerfile
+        command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:80"
+        volumes:
+            - ./djangoweb/env:/usr/src/app/djangoweb/env
+            - ./djangoweb/puddle:/usr/src/app/djangoweb/puddle
+            - ./djangoweb/.vscode:/usr/src/app/djangoweb/.vscode
+        ports:
+            - '9092:80'
+        environment:
+            - HOST_WEB=web
 
-  dashboard:
-    build:
-      context: .
-      dockerfile: ./dashboard/Dockerfile
-    ports:
-      - "9093:9093"
-    volumes:
-      - ./dashboard/env:/usr/src/app/dashboard/env
-      - ./dashboard/templates:/usr/src/app/dashboard/templates
-      - ./dashboard/app.py:/usr/src/app/dashboard/app.py
-    environment:
-      - DB_HOST=mysql
-      - DB_USER=root
-      - DB_PASSWORD=!pyree2023
-      - DB_DATABASE=logs
-    depends_on:
-      - mysql
-
-  web:
-    container_name: django
-    build: 
-      context: .
-      dockerfile: ./djangoweb/Dockerfile
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:80"
-    volumes: 
-      - ./djangoweb/env:/usr/src/app/djangoweb/env
-      - ./djangoweb/puddle:/usr/src/app/djangoweb/puddle
-      - ./djangoweb/.vscode:/usr/src/app/djangoweb/.vscode
-    ports:
-      - "9092:80"
-    environment:
-      - HOST_WEB=web
-
-  mysql:
-    build: 
-      context: .
-      dockerfile: ./dockerfile
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
+    mysql:
+        build:
+            context: .
+            dockerfile: ./dockerfile
+        healthcheck:
+            test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+            timeout: 2s
+            retries: 10
