@@ -6,7 +6,7 @@ function data.connect()
     local db, err = mysql:new()
     if not db then
         ngx.log(ngx.ERR, "failed to instantiate mysql: ", err)
-        return 
+        return
     end
 
     local ok, err, errcode, sqlstate = db:connect{
