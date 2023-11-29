@@ -8,17 +8,15 @@ services:
             - ./waf/conf.d/:/etc/nginx/conf.d/
             - ./waf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
             - ./waf/logs/:/var/log/nginx/
+            - ./waf/request_blocked.html:/usr/local/openresty/nginx/html/request_blocked.html:ro
         ports:
             - '9090:80'
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
         environment:
-            - HOST_WEB=web
-            - AWS_HOST runtime.sagemaker.ap-northeast-2.amazonaws.com
-            - AWS_KEY AKIA5L5F4ZVAQ2UDAX55
-            - AWS_SECRET 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
-            - AWS_REGION ap-northeast-2
-            - AWS_SERVICE sagemaker
-            - REQUEST_METHOD POST
-            - REQUEST_PATH /endpoints/pyree-serverless/invocations    
+            - HOST_WEB=web  
         depends_on:
           mysql:
             condition: service_healthy

@@ -11,3 +11,6 @@ COPY ./waf/nginx.conf .
 
 WORKDIR /usr/local/openresty/nginx/conf
 COPY ./waf/conf.d .
+
+WORKDIR usr/local/openresty/nginx/html/request_blocked.html
+COPY ./waf/request_blocked.html .
