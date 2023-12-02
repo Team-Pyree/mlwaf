@@ -11,6 +11,8 @@ services:
             - ./waf/request_blocked.html:/usr/local/openresty/nginx/html/request_blocked.html:ro
         ports:
             - '9090:80'
+        env_file:
+            - waf.env
         healthcheck:
             test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
             timeout: 20s
@@ -25,17 +27,14 @@ services:
         build:
             context: .
             dockerfile: ./dashboard/Dockerfile
+        env_file:
+            - dash.env
         ports:
             - '9093:9093'
         volumes:
             - ./dashboard/env:/usr/src/app/dashboard/env
             - ./dashboard/templates:/usr/src/app/dashboard/templates
             - ./dashboard/app.py:/usr/src/app/dashboard/app.py
-        environment:
-            - DB_HOST=mysql
-            - DB_USER=root
-            - DB_PASSWORD=!pyree2023
-            - DB_DATABASE=logs
         depends_on:
           mysql:
             condition: service_healthy
@@ -60,6 +59,8 @@ services:
         build:
             context: .
             dockerfile: ./dockerfile
+        env_file:
+            - db.env
         healthcheck:
             test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
             timeout: 2s

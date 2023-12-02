@@ -9,11 +9,11 @@ app.secret_key = os.urandom(24)
 def connect_to_mysql():
     try:
         return pymysql.connect(
-            host='mysql',
+            host=os.getenv("DB_HOST"),
             port=3306,
-            user='root',
-            password='!pyree2023',
-            database='logs',
+            user=os.getenv("DB_PORT"),
+            password=os.getenv("DB_PASSWORD"),
+            database=os.getenv("DB_DATABASE"),
             charset='utf8'
         )
     except pymysql.MySQLError as e:

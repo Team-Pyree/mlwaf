@@ -22,10 +22,6 @@ WORKDIR /docker-entrypoint-initdb.d
 COPY ./security_logs.sql .
 COPY ./users.sql .
 
-# MySQL 루트 사용자의 비밀번호와 생성할 데이터베이스 이름을 환경 변수로 설정
-ENV MYSQL_ROOT_PASSWORD=!pyree2023
-ENV MYSQL_DATABASE=logs
-
 # MySQL 컨테이너가 3306 포트를 사용하도록 설정 (선택적)
 EXPOSE 3306
 
