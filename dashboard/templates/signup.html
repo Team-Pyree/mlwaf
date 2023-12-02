@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Account</title>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                background: #f7f7f7;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .signup-container {
+                background: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 90%;
+                max-width: 400px;
+            }
+            .signup-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .signup-container input,
+            .signup-container button {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+            .signup-container button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            .signup-container button:hover {
+                background-color: #0056b3;
+            }
+            .signup-container .login-link {
+                text-align: center;
+                margin-top: 15px;
+            }
+            .signup-container .login-link a {
+                color: #007bff;
+                text-decoration: none;
+            }
+            .signup-container .login-link a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="signup-container">
+            <h2>회원가입 하기</h2>
+            <form method="post" action="/signup">
+                <input type="text" name="fullname" placeholder="이름" required />
+                <input type="email" name="email" placeholder="이메일 주소" required />
+                <input type="text" name="phone" placeholder="전화번호" required />
+                <input type="password" name="password" placeholder="비밀번호" required />
+                <input type="password" name="confirm_password" placeholder="비밀번호를 한번 더 입력해주세요" required />
+
+                <button type="submit">회원가입</button>
+            </form>
+            <div class="login-link">계정이 이미 있으신가요? <a href="/login">로그인</a></div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    alert("{{ messages[0] }}");
+                {% endif %}
+            {% endwith %}
+        };
+</html>
