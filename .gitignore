@@ -13,4 +13,3 @@ data/
 
 db.env
 dash.env
-waf.env
