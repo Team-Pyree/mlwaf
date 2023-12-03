@@ -1322,3 +1322,85 @@ Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken
 Method: GET, Path: /items/
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
 Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz', 'session': 'eyJ1c2VybmFtZSI6ImNob2kgdGltIn0.ZWqQCQ.TpPmP4dl79LVyXdYnBYGhqb3uck'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /media/item_images/내_버버리_RUM2GMk.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /favicon.ico
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Not Found: /favicon.ico
+Method: GET, Path: /items/14/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /items/14/delete/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /dashboard/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /logout/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG', 'sessionid': 'akbdh0t8znfsvia6vnzao2bjfl953ssz'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG'}
+Method: GET, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG'}
+Method: POST, Path: /login/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'gVQISXd5UzdIUsrakgV7c65kiVgaZPMG'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /items/new/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: POST, Path: /items/new/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /items/15/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /media/item_images/내_버버리_lhW1H5E.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /media/item_images/내_버버리_lhW1H5E.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /inbox/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /dashboard/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /media/item_images/내_버버리_lhW1H5E.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /items/15/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /media/item_images/내_버버리_lhW1H5E.png
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /items/15/delete/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /dashboard/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
+Method: GET, Path: /items/new/
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Cookies: {'ajs_anonymous_id': '788b69ef-78e5-48cf-abc1-6968e8247329', 'csrftoken': 'Z74AaTvoxhApI9Z3zd6lzv2rzrSujL5t', 'sessionid': '13vhk0mpkd7kxxml127yx0yhnkfqaow1'}
