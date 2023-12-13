@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  ModelName:
+    Description: Model name
+    Type: String
+  ModelDataUrl:
+    Description: Location of model artefact
+    Type: String
+  ModelProgram:
+    Description: Model entry point python file name
+    Type: String
+  ModelDirectory:
+    Description: Directory of Model entry point
+    Type: String
+  TrainingImage:
+    Description: The container used to train the model
+    Type: String
+  InstanceType:
+    Description: Instance type
+    Type: String
+    Default: ml.t2.xlarge
+  InstanceCount:
+    Description: Instance count
+    # Type: String
+    Type: Number
+    Default: 1
+  RoleArn:
+    Description: Execution Role ARN
+    Type: String
+
+Resources:
+  Model:
+    Type: "AWS::SageMaker::Model"
+    Properties: 
+      PrimaryContainer:
+          Image: !Ref TrainingImage
+          ModelDataUrl: !Ref ModelDataUrl
+          Environment:
+            SAGEMAKER_PROGRAM: !Ref ModelProgram
+            SAGEMAKER_SUBMIT_DIRECTORY: s3://sagemaker-ap-northeast-2-918934048065/svc-custom-sklearn-2023-12-02-16-15-36-841/source/sourcedir.tar.gz
+      ExecutionRoleArn: !Ref RoleArn
+      ModelName: !Ref ModelName
+
+  Endpoint:
+    Type: "AWS::SageMaker::Endpoint"
+    Properties: 
+      EndpointConfigName: !GetAtt EndpointConfig.EndpointConfigName
+      #Using a custom name will prevent updates with change sets
+      #EndpointName: !Ref EndpointName
+
+  EndpointConfig:
+    Type: "AWS::SageMaker::EndpointConfig"
+    Properties:
+      ProductionVariants: 
+        -
+          ModelName: !GetAtt Model.ModelName
+          VariantName: variant-1
+          InitialInstanceCount: !Ref InstanceCount
+          InstanceType: !Ref InstanceType
+          InitialVariantWeight: 1.0
+      #Using a custom name will prevent updates with change sets
+      #EndpointConfigName: !Ref EndpointConfigName
+
+Outputs:
+  EndpointId:
+    Value: !Ref Endpoint
+  EndpointName:
+    Value: !GetAtt Endpoint.EndpointName
+    # CustomEndpointName:
+    # Value: !Sub "endpoint"
+

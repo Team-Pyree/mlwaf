@@ -18,6 +18,8 @@ services:
             timeout: 20s
             retries: 10
         environment:
+            - REQUEST_PATH=${REQUEST_PATH}
+            # - REQUEST_PATH=/endpoints/Custom-sklearn-model-2023-12-04-11-50-30/invocations
             - HOST_WEB=web  
         depends_on:
           mysql:
