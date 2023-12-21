@@ -88,7 +88,7 @@ DB Insert를 통한 고성능 방화벽 구현**
         </a>
     </td>
     <td>
-      <img width="230" alt="image" src="https://github.com/Choitim/mlwaf/assets/75467180/9d2a3b0c-464f-47cc-84d3-7376dbf4b224">
+      <img width="227" alt="image" src="https://github.com/Team-Pyree/mlwaf/assets/75467180/9d672be4-fb45-4036-9b54-4225f1e66853"/>
     </td>
      <td>
       <img width="227" alt="image" src="https://github.com/Choitim/mlwaf/assets/75467180/ada89ed1-d570-4a99-b746-8b91449455e1">
