@@ -1,5 +1,9 @@
 # MLWAF 프로젝트
 
+
+## contact
+Email: timchoi931@gmail.com
+
 ## 프로젝트 설명
 **Nginx event driven/async IO 구조를 이용한 ML endpoint rest API 호출 및 MySQL 
 DB Insert를 통한 고성능 방화벽 구현**
