@@ -49,7 +49,7 @@ DB Insert를 통한 고성능 방화벽 구현**
 >- AWS_KEY= {your key} <br/>
 >- AWS_SECRET= {your secret Key}<br/>
 >- AWS_REGION= {your location}<br/>
->- AWS_SERVIC=sagemaker<br/>
+>- AWS_SERVICE=sagemaker<br/>
 >- CONTENT_TYPE=application/json<br/>
 >- REQUEST_METHOD=POST<br/>
 >- REQUEST_PATH= {작성}<br/>
